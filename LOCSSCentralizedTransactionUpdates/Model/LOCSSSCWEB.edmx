@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LOCSSSCWEBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="Site" />
+          </Key>
+          <Property Name="Site" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TaskMapping" Type="nvarchar" MaxLength="5" />
+          <Property Name="ReportOn" Type="nvarchar" MaxLength="5" />
+          <Property Name="MainConnectionString" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TrackingConnectionString" Type="varchar" MaxLength="255" />
+          <Property Name="SpecConnectionString" Type="varchar" MaxLength="255" />
+          <Property Name="ActiveFlag" Type="bit" Nullable="false" />
+          <Property Name="Created_By" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Created_Date" Type="smalldatetime" Nullable="false" />
+          <Property Name="Created_IP" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Modified_By" Type="varchar" MaxLength="5" />
+          <Property Name="Modified_On" Type="smalldatetime" />
+          <Property Name="Modified_IP" Type="varchar" MaxLength="12" />
+          <Property Name="QtyMandate" Type="bit" />
+          <Property Name="DescMandate" Type="bit" />
+          <Property Name="NoOfRows" Type="numeric" Precision="4" Scale="0" />
+          <Property Name="BatchAccessFlag" Type="bit" />
+          <Property Name="NoQtyForL2" Type="bit" />
+          <Property Name="ProdRptServer" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProdRptDBName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TimeZone" Type="nvarchar" MaxLength="20" />
+          <Property Name="TimeZoneOffset" Type="nvarchar" MaxLength="10" />
+          <Property Name="NewSite" Type="nvarchar" MaxLength="5" />
+          <Property Name="TimeZoneID" Type="int" />
+        </EntityType>
+        <EntityContainer Name="LOCSSSCWEBModelStoreContainer">
+          <EntitySet Name="Site" EntityType="Self.Site" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LOCSSSCWEBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="Site1" />
+          </Key>
+          <Property Name="Site1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaskMapping" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ReportOn" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="MainConnectionString" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrackingConnectionString" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SpecConnectionString" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ActiveFlag" Type="Boolean" Nullable="false" />
+          <Property Name="Created_By" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Created_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Created_IP" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modified_By" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Modified_On" Type="DateTime" Precision="0" />
+          <Property Name="Modified_IP" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="QtyMandate" Type="Boolean" />
+          <Property Name="DescMandate" Type="Boolean" />
+          <Property Name="NoOfRows" Type="Decimal" Precision="4" Scale="0" />
+          <Property Name="BatchAccessFlag" Type="Boolean" />
+          <Property Name="NoQtyForL2" Type="Boolean" />
+          <Property Name="ProdRptServer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProdRptDBName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TimeZone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TimeZoneOffset" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NewSite" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="TimeZoneID" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="LOCSSSCWEBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Sites" EntityType="Self.Site" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LOCSSSCWEBModelStoreContainer" CdmEntityContainer="LOCSSSCWEBEntities">
+          <EntitySetMapping Name="Sites">
+            <EntityTypeMapping TypeName="LOCSSSCWEBModel.Site">
+              <MappingFragment StoreEntitySet="Site">
+                <ScalarProperty Name="Site1" ColumnName="Site" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TaskMapping" ColumnName="TaskMapping" />
+                <ScalarProperty Name="ReportOn" ColumnName="ReportOn" />
+                <ScalarProperty Name="MainConnectionString" ColumnName="MainConnectionString" />
+                <ScalarProperty Name="TrackingConnectionString" ColumnName="TrackingConnectionString" />
+                <ScalarProperty Name="SpecConnectionString" ColumnName="SpecConnectionString" />
+                <ScalarProperty Name="ActiveFlag" ColumnName="ActiveFlag" />
+                <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+                <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+                <ScalarProperty Name="Created_IP" ColumnName="Created_IP" />
+                <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+                <ScalarProperty Name="Modified_On" ColumnName="Modified_On" />
+                <ScalarProperty Name="Modified_IP" ColumnName="Modified_IP" />
+                <ScalarProperty Name="QtyMandate" ColumnName="QtyMandate" />
+                <ScalarProperty Name="DescMandate" ColumnName="DescMandate" />
+                <ScalarProperty Name="NoOfRows" ColumnName="NoOfRows" />
+                <ScalarProperty Name="BatchAccessFlag" ColumnName="BatchAccessFlag" />
+                <ScalarProperty Name="NoQtyForL2" ColumnName="NoQtyForL2" />
+                <ScalarProperty Name="ProdRptServer" ColumnName="ProdRptServer" />
+                <ScalarProperty Name="ProdRptDBName" ColumnName="ProdRptDBName" />
+                <ScalarProperty Name="TimeZone" ColumnName="TimeZone" />
+                <ScalarProperty Name="TimeZoneOffset" ColumnName="TimeZoneOffset" />
+                <ScalarProperty Name="NewSite" ColumnName="NewSite" />
+                <ScalarProperty Name="TimeZoneID" ColumnName="TimeZoneID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
